@@ -27,6 +27,37 @@
   margin-right: 90px;
 }
 
+.header-burger {
+  display: none;
+  width: 40px;
+  height: 25px;
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.header-burger::before,
+.header-burger::after,
+.header-burger span {
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #212121;
+}
+
+.header-burger span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-burger::after {
+  top: auto;
+  bottom: 0;
+}
+
 .header {
   padding: 25px 0;
   font-weight: 500;
@@ -117,10 +148,11 @@
 .about-cards {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .about-card {
-  flex: 1 1 25%;
+  flex: 1 1 22%;
 }
 
 .about-card > .Attention-to-detail {
@@ -168,12 +200,20 @@
 
 .do-cards {
   display: flex;
-  gap: 30px;
+  
+  flex-wrap: wrap;
+  margin: 0 -15px;
 }
 
 .do-card {
-  height: 294px;
+  flex: 0 1 33.3333%;
+  padding: 0 15px;
+}
+
+.do-card > div {
   overflow: hidden;
+  position: relative;
+  height: 294px;
 }
 
 .do-card img {
@@ -196,6 +236,7 @@
   min-height: 600px;
   background: #F5F4FA;
   justify-content: center;
+  
 }
 
 
@@ -232,7 +273,21 @@
 
 .team-cards {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.team-card {
+  flex: 0 1 20.3333%;
+  padding: 0 15px;
+}
+
+.team-card > div {
+position: relative;
+overflow: hidden;
+height: 428px;
+margin-bottom:94px;
+
 }
 
 .footer {
@@ -987,4 +1042,98 @@
 
 }
 
+@media screen and (max-width:1200px) {
+  .header-logo {
+    margin-right: 30px;
+  }
+   .header-nav,
+  .header-info {
+    gap: 30px
+  }
+  .team-card {
+    flex-basis: 50%;
+  }
+  .team-cards {
+    row-gap: 30px;
+  }
+
+
+}
+
+@media screen and (max-width: 1000px) {
+  .header-logo {
+    margin-right: 30px;
+  }
+  .header-nav,
+  .header-info {
+    gap: 30px
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .header-nav,
+  .header-info {
+    display: none;
+  }
+  .header-burger {
+    display: block;
+  }
+
+.about-card {
+  flex: 1 1 47%;
+}
+
+.do-cards {
+  row-gap: 30px;
+}
+
+.do-card {
+  flex-basis: 50%;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    min-height: 400px; 
+  }
+  .hero-title {
+    font-size: 26px;
+    line-height: 42px;
+  }
+  .about-card {
+  flex: 1 1 100%;
+}
+.do-title {
+  font-size: 28px;
+}
+}
+
+@media screen and (max-width: 640px) {
+  .hero-title {
+    font-size: 26px;
+    line-height: 42px;
+  }
+.hero {
+  min-height: 400px;
+}
+.about-card {
+  flex: 1 1 100%;
+}
+  .do-card {
+    flex-basis: 100%;
+  }
+
+  .do-card > div {
+    height: 200px;
+  }
+  .team {
+    flex: 1 1 100%;
+    min-height: 400px;
+  }
+
+  .team-card {
+    flex: 1 1 47%;
+  }
+
+}
 
